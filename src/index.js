@@ -102,4 +102,12 @@ app.get('/statement/date', (request, response) => {
   return response.json(statement)
 })
 
+app.put('/account', (request, response) => {
+  const { name } = request.body
+  const { customer } = request
+  customer.name = name
+
+  return response.status(201).send()
+})
+
 app.listen('3000')
