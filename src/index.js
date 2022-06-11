@@ -115,4 +115,10 @@ app.get('/account', (request, response) => {
   return response.json(customer)
 })
 
+app.delete('account', (request, response) => {
+  const { customer } = request
+  customer.splice(customer, 1)
+  return response.status(204)
+})
+
 app.listen('3000')
